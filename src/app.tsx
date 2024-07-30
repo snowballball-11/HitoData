@@ -13,8 +13,8 @@ export async function getInitialState(): Promise<{}> {
 export const layout: RunTimeLayoutConfig = (initialState: any) => {
   return {
     // 常用属性
-    title: 'ERD Online',
-    logo: '/logo.svg',
+    title: 'HitoData',
+    logo: '/logo.png',
     pure: true,
     // 自定义 403 页面
     noAccessible: <NoAccessPage/>,

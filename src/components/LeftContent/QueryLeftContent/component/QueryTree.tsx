@@ -13,6 +13,7 @@ import AddQueryFolder from "@/components/dialog/query/AddQueryFolder";
 import {useSearchParams} from "@@/exports";
 import * as cache from "@/utils/cache";
 import {CONSTANT} from "@/utils/constant";
+import { colorPrimary } from "@/components/Theme";
 
 const {DirectoryTree} = Tree;
 
@@ -80,8 +81,8 @@ const QueryTree: React.FC<QueryTreeProps> = (props) => {
             >
               <div>
                 {node.isLeaf ?
-                  <Table theme="filled" size="12" fill="#DE2910" strokeWidth={2} strokeLinejoin="miter"/> :
-                  <FolderCode theme="filled" size="12" fill="#DE2910" strokeWidth={2} strokeLinejoin="miter"/>}
+                  <Table theme="filled" size="12" fill={colorPrimary} strokeWidth={2} strokeLinejoin="miter"/> :
+                  <FolderCode theme="filled" size="12" fill={colorPrimary} strokeWidth={2} strokeLinejoin="miter"/>}
                 <EllipsisMiddle title={node.title} style={{marginLeft: '5px'}}>
                   {node.title}
                 </EllipsisMiddle>

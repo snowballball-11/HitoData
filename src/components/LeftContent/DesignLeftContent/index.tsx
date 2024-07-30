@@ -21,45 +21,44 @@ const DesignLeftContent: React.FC<DesignLeftContentProps> = (props) => {
     }), shallow);
 
     return (
-      props.collapsed ? <></> :
-        <>
-          <Input
-            style={{
-              borderRadius: 4,
-              marginInlineEnd: 12,
-            }}
-            allowClear
-            size={"small"}
-            prefix={<SearchOutlined/>}
-            placeholder="搜索元数据"
-            onPressEnter={(e) => {
-              // @ts-ignore
-              globalDispatch.setSearchKey(e.target?.value)
-            }}
-          />
-          <Tabs defaultActiveKey="1" centered={true}>
-            <TabPane
-              tab={
-                <div>
-                  元数据
-                </div>
-              }
-              key="1"
-            >
-              <DataTable/>
-            </TabPane>
-            <TabPane
-              tab={
-                <div>
-                  数据域
-                </div>
-              }
-              key="2"
-            >
-              <DataDomain/>
-            </TabPane>
-          </Tabs>
-        </>
+      <>
+        <Input
+          style={{
+            borderRadius: 4,
+            marginInlineEnd: 12,
+          }}
+          allowClear
+          size={"small"}
+          prefix={<SearchOutlined/>}
+          placeholder="搜索元数据"
+          onPressEnter={(e) => {
+            // @ts-ignore
+            globalDispatch.setSearchKey(e.target?.value)
+          }}
+        />
+        <Tabs defaultActiveKey="1" centered={true}>
+          <TabPane
+            tab={
+              <div>
+                元数据
+              </div>
+            }
+            key="1"
+          >
+            <DataTable/>
+          </TabPane>
+          <TabPane
+            tab={
+              <div>
+                数据域
+              </div>
+            }
+            key="2"
+          >
+            <DataDomain/>
+          </TabPane>
+        </Tabs>
+      </>
     )
   }
 ;

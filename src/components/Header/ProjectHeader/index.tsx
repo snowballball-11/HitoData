@@ -1,6 +1,7 @@
 import React from 'react';
 import {Alignment, Button, Classes, InputGroup, Navbar, NavbarDivider} from "@blueprintjs/core";
 import {Left, Right, Top} from "react-spaces";
+import Theme from "@/components/Theme";
 
 
 export type ProjectHeaderProps = {};
@@ -8,12 +9,13 @@ export type ProjectHeaderProps = {};
 const ProjectHeader: React.FC<ProjectHeaderProps> = (props) => {
   return (
     <Top size="50px" style={{background:"#404854"}}>
-      <Left size={"12%"}>
+        <Theme/>
+        <Left size={"12%"}>
         <Navbar>
           <Navbar.Group align={Alignment.CENTER}>
             <img src={"/favicon.ico"}/>
             <NavbarDivider/>
-            <Navbar.Heading>ERD Online</Navbar.Heading>
+            <Navbar.Heading>HitoData</Navbar.Heading>
           </Navbar.Group>
         </Navbar>
       </Left>

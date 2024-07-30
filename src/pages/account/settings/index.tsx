@@ -98,11 +98,11 @@ const Settings: React.FC = () => {
   console.log(154, licence, licence?.licensedTo, licence.licensedStartTime);
 
   return (
-    <WaterMark content={[licence?.licensedTo?licence?.licensedTo:'ERD Online', 'V5.0.0']}>
+    <WaterMark content={[licence?.licensedTo?licence?.licensedTo:'HitoData', 'V0.5.0']}>
 
       <ProLayout
         logo={"/logo.svg"}
-        title={"ERD Online"}
+        title={"HitoData"}
         bgLayoutImgList={[
           {
             src: 'https://img.alicdn.com/imgextra/i2/O1CN01O4etvp1DvpFLKfuWq_!!6000000000279-2-tps-609-606.png',
@@ -148,8 +148,8 @@ const Settings: React.FC = () => {
                 paddingBlockStart: 12,
               }}
             >
-              <div>© 2023 Made with 零代科技</div>
-              <div>ERD Online</div>
+              <div>© 2024 made with HitoX</div>
+              <div>HitoData</div>
             </div>
           );
         }}

@@ -52,7 +52,7 @@ const CopyProject: React.FC<CopyProjectProps> = (props) => {
             tags: _.join(values.tags, ',')
           }).then((r) => {
             console.log(54, r);
-            if (r.code === 200) {
+            if (r && r.code === 200) {
               message.success(
                 <>
                   复刻成功，
@@ -74,7 +74,7 @@ const CopyProject: React.FC<CopyProjectProps> = (props) => {
             tags: _.join(values.tags, ',')
           }).then((r) => {
             console.log(54, r);
-            if (r.code === 200) {
+            if (r && r.code === 200) {
               message.success(
                 <>
                   复刻成功，

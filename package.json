@@ -1,6 +1,6 @@
 {
-  "name": "ERD-Online",
-  "version": "5.0.0",
+  "name": "HitoData",
+  "version": "0.0.5",
   "private": true,
   "description": "开箱即用的数据库建模,产品版本管理软件",
   "scripts": {
@@ -145,28 +145,8 @@
     "umi-presets-pro": "^1.0.8",
     "url-loader": "^4.1.1"
   },
-  "packageManager": "pnpm@7.3.0",
   "engines": {
-    "node": ">=14",
-    "pnpm": ">=7"
-  },
-  "pnpm": {
-    "peerDependencyRules": {
-      "ignoreMissing": [
-        "react",
-        "react-dom",
-        "antd",
-        "dva",
-        "postcss",
-        "webpack",
-        "eslint",
-        "stylelint",
-        "redux"
-      ]
-    },
-    "overrides": {
-      "esbuild": "0.15.10"
-    }
+    "node": ">=14"
   },
   "gitHooks": {
     "commit-msg": "fabric verify-commit"
@@ -175,5 +155,6 @@
     "@babel/core": "^7.0.0-0",
     "@types/lodash.merge": "^4.6.7",
     "rc-field-form": "^1.22.0"
-  }
+  },
+  "packageManager": "yarn@1.22.22"
 }

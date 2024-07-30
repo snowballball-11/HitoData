@@ -108,13 +108,13 @@ services:
       - erd
 
   erd-ui:
-    image: erdonline/erd-ui:5.0.0
+    image: erdonline/erd-ui:latest
     container_name: erd-ui
     restart: on-failure
     env_file:
       - ./env/ui.env
     ports:
-      - "9669:9669"
+      - 23739:9669
     networks:
       - erd
 

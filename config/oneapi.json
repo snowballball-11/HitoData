@@ -1,7 +1,7 @@
 {
   "openapi": "3.0.1",
   "info": {
-    "title": "ERD Online",
+    "title": "HitoData",
     "version": "1.0.0"
   },
   "servers": [

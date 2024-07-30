@@ -26,7 +26,7 @@ const BackendCode: React.FC<BackendCodeProps> = (props) => {
     {
       key: '1',
       label: '产品',
-      children: 'ERD Online 微服务架构源码',
+      children: 'HitoData 微服务架构源码',
     },
     {
       key: '2',
@@ -43,7 +43,7 @@ const BackendCode: React.FC<BackendCodeProps> = (props) => {
       label: '交付产品清单',
       children: (
         <>
-          <strong>交付物:</strong> 完整的ERD Online后端微服务架构
+          <strong>交付物:</strong> 完整的HitoData后端微服务架构
           <br/>
           <strong>整体架构组成:</strong> jdk1.8、maven3、spring boot2.3.2、mysql8、nacos1.4、redis4.10
           <br/>

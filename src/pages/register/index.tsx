@@ -1,17 +1,19 @@
 import {LoginFormPage, ProFormText,} from '@ant-design/pro-components';
-import {Button, message} from 'antd';
+import {message} from 'antd';
 import {POST} from "@/services/crud";
 import {login} from "@/pages/login";
+import { ThemeProvider } from "@/components/Theme";
+import { HitoData } from '@/components/HitoData';
 
 
 export default () => {
   return (
+    <ThemeProvider>
     <div style={{backgroundColor: 'white', height: 'calc(100vh - 48px)', margin: 24}}>
       <LoginFormPage
         backgroundImageUrl="../bg2.png"
-        logo="../logo.svg"
-        title="ERD Online"
-        subTitle="全球第一个开源在线数据库建模平台"
+        title={<HitoData />}
+        subTitle=""
         onFinish={async (values: any) => {
           console.log(29, values);
           let username = values.username;
@@ -35,32 +37,6 @@ export default () => {
               login(username, pwd);
             }
           });
-        }}
-        activityConfig={{
-          style: {
-            boxShadow: '0px 0px 8px rgba(0, 0, 0, 0.2)',
-            color: '#fff',
-            borderRadius: 8,
-            backgroundColor: '#f16824',
-          },
-          title: 'ERD Online 5.0.0发布',
-          subTitle: '全新升级，团队协作，权限控制，接入ChatGPT，智能SQL',
-          action: (
-            <Button
-              size="large"
-              style={{
-                borderRadius: 20,
-                background: '#fff',
-                color: '#1677FF',
-                width: 120,
-              }}
-              onClick={() => {
-                window.location.href = "https://github.com/orgs/www-zerocode-net-cn/discussions"
-              }}
-            >
-              去看看
-            </Button>
-          ),
         }}
       >
         <ProFormText
@@ -162,5 +138,6 @@ export default () => {
 
       </LoginFormPage>
     </div>
+    </ThemeProvider>
   );
 };

@@ -18,7 +18,7 @@ export default defineConfig({
   fastRefresh: true,
   // umi routes: https://umijs.org/docs/routing
   routes,
-  title:'ERD Online',
+  title:'HitoData',
   ignoreMomentLocale: true,
   proxy: proxy[REACT_APP_ENV || 'dev'],
   manifest: {

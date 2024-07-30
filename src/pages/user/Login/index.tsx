@@ -19,7 +19,7 @@ export default class MyFirstGrid extends React.Component {
             <div key="45D4A20A-D9C0-4F66-A426-896F5EBA0217" className={style.F5EBA0217}><ZeroCodeGridLayout
               layout={F5EBA0217}>
               <div key="504D50B9-1063-4E43-8214-94ACC58F6C42">
-                <div className={style.ACC58F6C42}>ERD ONLINE</div>
+                <div className={style.ACC58F6C42}>HitoData</div>
               </div>
               <div key="F57CF37E-7029-4E7D-99D7-A7DB1CAE14CC">
                 <div className={style.A7DB1CAE14CC}></div>
@@ -36,7 +36,7 @@ export default class MyFirstGrid extends React.Component {
             </div>
           </ZeroCodeGridLayout></div>
           <div key="6D3C4B1E-151C-4973-9768-AFB58EC422E3">
-            <div className={style.AFB58EC422E3}>Copyright &ERD ONLINE 2021</div>
+            <div className={style.AFB58EC422E3}>Copyright &HitoData 2024</div>
           </div>
         </ZeroCodeGridLayout></div>
       </>

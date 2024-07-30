@@ -10,7 +10,7 @@ import {history, Link, Outlet, useModel, useSearchParams} from "@umijs/max";
 import {GET} from "@/services/crud";
 import {useAccess} from "@@/plugin-access";
 import {CONSTANT} from "@/utils/constant";
-import Theme from "@/components/Theme";
+import Theme, { ThemeProvider } from "@/components/Theme";
 import {menuHeaderDropdown} from "@/layouts/HomeLayout";
 
 
@@ -65,10 +65,11 @@ const GroupLayout: React.FC<GroupLayoutProps> = (props) => {
 
 
   return (
-    <WaterMark content={[licence?.licensedTo?licence?.licensedTo:'ERD Online', 'V5.0.0']}>
+    <WaterMark content={[licence?.licensedTo?licence?.licensedTo:'HitoData', 'V0.5.0']}>
+      <ThemeProvider>
       <ProLayout
-        logo={"/logo.svg"}
-        title={"ERD Online"}
+        logo={"/logo.png"}
+        title={"HitoData"}
         {...defaultProps}
         location={{
           pathname,
@@ -85,8 +86,7 @@ const GroupLayout: React.FC<GroupLayoutProps> = (props) => {
           </Dropdown>,
         }}
         actionsRender={(props) => {
-          if (props.isMobile) return [];
-          return headRightContent;
+          return [];
         }}
         menuFooterRender={(props) => {
           if (props?.collapsed) return undefined;
@@ -97,8 +97,8 @@ const GroupLayout: React.FC<GroupLayoutProps> = (props) => {
                 paddingBlockStart: 12,
               }}
             >
-              <div>© 2023 Made with 零代科技</div>
-              <div>ERD Online</div>
+              <div>© 2023 Made with HitoX</div>
+              <div>HitoData</div>
             </div>
           );
         }}
@@ -136,6 +136,7 @@ const GroupLayout: React.FC<GroupLayoutProps> = (props) => {
           </ProCard>
         </PageContainer>
       </ProLayout>
+      </ThemeProvider>
     </WaterMark>
   );
 };

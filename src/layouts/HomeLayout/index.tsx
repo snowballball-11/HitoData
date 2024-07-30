@@ -1,16 +1,16 @@
 import React, {useEffect, useState} from 'react';
 import defaultProps from './_defaultProps';
-import {history, Link, Outlet} from "@@/exports";
+import {history, Link} from "@@/exports";
 import {PageContainer, ProCard, ProLayout, ProSettings, WaterMark} from '@ant-design/pro-components';
 import {Me} from "@icon-park/react";
-import {headRightContent} from "@/layouts/DesignLayout";
-import {Button, ConfigProvider, Dropdown, Menu, theme} from "antd";
+import {Dropdown, Menu} from "antd";
 import {logout} from "@/utils/request";
 import * as cache from "@/utils/cache";
 import {useModel} from "@umijs/max";
 import useTabStore from "@/store/tab/useTabStore";
-import Theme from "@/components/Theme";
-import {LogoutOutlined, SettingOutlined, UserOutlined} from "@ant-design/icons";
+import Theme, { ThemeProvider } from "@/components/Theme";
+import {LogoutOutlined, UserOutlined} from "@ant-design/icons";
+import { colorPrimary } from "@/components/Theme";
 
 
 export interface HomeLayoutLayoutProps {
@@ -68,17 +68,17 @@ const HomeLayout: React.FC<HomeLayoutLayoutProps> = props => {
   console.log(154, licence, licence?.licensedTo, licence.licensedStartTime);
 
   return (
-    <WaterMark content={[licence?.licensedTo?licence?.licensedTo:'ERD Online', 'V5.0.0']}>
-
+    <WaterMark content={[licence?.licensedTo?licence?.licensedTo:'HitoData', 'V0.5.0']}>
+      <ThemeProvider>
       <ProLayout
-        logo={"/logo.svg"}
-        title={"ERD Online"}
+        logo={"/logo.png"}
+        title={"HitoData"}
         {...defaultProps}
         location={{
           pathname,
         }}
         avatarProps={{
-          src: <Me theme="filled" size="28" fill="#DE2910" strokeWidth={2}/>,
+          src: <Me theme="filled" size="28" fill={colorPrimary} strokeWidth={2}/>,
           title: <Dropdown
             placement="bottom"
             arrow={{pointAtCenter: true}}
@@ -87,8 +87,7 @@ const HomeLayout: React.FC<HomeLayoutLayoutProps> = props => {
           </Dropdown>,
         }}
         actionsRender={(props) => {
-          if (props.isMobile) return [];
-          return headRightContent;
+          return [];
         }}
         menuFooterRender={(props) => {
           if (props?.collapsed) return undefined;
@@ -99,10 +98,10 @@ const HomeLayout: React.FC<HomeLayoutLayoutProps> = props => {
                 paddingBlockStart: 12,
               }}
             >
-              <div>奋斗就是生活，人生只有前进</div>
+              <div>星辰大海，前途可思</div>
               <br/>
-              <div>© 2023 Made with 零代科技</div>
-              <div>ERD Online</div>
+              <div>© 2024 made with HitoX</div>
+              <div>HitoData</div>
             </div>
           );
         }}
@@ -135,6 +134,7 @@ const HomeLayout: React.FC<HomeLayoutLayoutProps> = props => {
           </ProCard>
         </PageContainer>
       </ProLayout>
+      </ThemeProvider>
     </WaterMark>
   );
 }

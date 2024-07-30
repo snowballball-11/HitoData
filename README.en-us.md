@@ -7,15 +7,15 @@
 <p align="center"><strong>Featuring user-friendly metadata design, relationship diagram creation, SQL querying, and more. Enhanced with versioning, import/export, data sources, SQL parsing, auditing, and team collaboration tools for fast and secure metadata management in databases 🛠️</strong></p>
 
 <p align="center">
-<a href="https://github.com/www-zerocode-net-cn/ERD-Online"><img alt="ERD%20Online" src="https://img.shields.io/badge/zerocode-ERD%20Online-brightgreen"></a>
-<a href="https://github.com/www-zerocode-net-cn/ERD-Online/actions/workflows/ci.yml"><img alt="build" src="https://img.shields.io/github/actions/workflow/status/www-zerocode-net-cn/ERD-Online/ci.yml?branch=main&style=flat-square"></a>
+<a href="https://github.com/www-zerocode-net-cn/HitoData"><img alt="ERD%20Online" src="https://img.shields.io/badge/zerocode-ERD%20Online-brightgreen"></a>
+<a href="https://github.com/www-zerocode-net-cn/HitoData/actions/workflows/ci.yml"><img alt="build" src="https://img.shields.io/github/actions/workflow/status/www-zerocode-net-cn/HitoData/ci.yml?branch=main&style=flat-square"></a>
 <a href="https://mvnrepository.com/artifact/com.java2e/martin-extension-ncnb"><img alt="Maven Package" src="https://img.shields.io/maven-metadata/v?metadataUrl=https%3A%2F%2Frepo1.maven.org%2Fmaven2%2Fcom%2Fjava2e%2Fmartin-extension-ncnb%2Fmaven-metadata.xml"></a>
 </p>
 
 <p align="center">
-<a href="https://github.com/www-zerocode-net-cn/ERD-Online/blob/master/LICENSE"><img src="https://img.shields.io/github/license/www-zerocode-net-cn/ERD-Online?style=flat-square" alt="AGPL-V3 License"></a>
+<a href="https://github.com/www-zerocode-net-cn/HitoData/blob/master/LICENSE"><img src="https://img.shields.io/github/license/www-zerocode-net-cn/HitoData?style=flat-square" alt="AGPL-V3 License"></a>
 <a href="https://www.typescriptlang.org"><img alt="Language" src="https://img.shields.io/badge/language-TypeScript-blue.svg?style=flat-square"></a>
-<a href="https://github.com/www-zerocode-net-cn/ERD-Online/pulls"><img alt="PRs Welcome" src="https://img.shields.io/badge/PRs-Welcome-brightgreen.svg?style=flat-square"></a>
+<a href="https://github.com/www-zerocode-net-cn/HitoData/pulls"><img alt="PRs Welcome" src="https://img.shields.io/badge/PRs-Welcome-brightgreen.svg?style=flat-square"></a>
 <a href="https://www.erdonline.com"><img alt="website" src="https://img.shields.io/static/v1?label=&labelColor=505050&message=website&color=0076D6&style=flat-square&logo=google-chrome&logoColor=0076D6"></a>
 </p>
 
@@ -58,7 +58,7 @@ ERD Online Experience: [https://app.erdonline.com/](https://app.erdonline.com/)
 
 ERD Online Documentation: [https://doc.erdonline.com/](https://doc.erdonline.com/)
 
-Forum: [https://github.com/www-zerocode-net-cn/ERD-Online/discussions](https://github.com/www-zerocode-net-cn/ERD-Online/discussions)
+Forum: [https://github.com/www-zerocode-net-cn/HitoData/discussions](https://github.com/www-zerocode-net-cn/HitoData/discussions)
 
 Backend Source Code:
 - [Cluster Version](https://github.com/www-zerocode-net-cn/martin-framework)

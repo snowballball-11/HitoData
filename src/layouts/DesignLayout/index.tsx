@@ -4,41 +4,25 @@ import defaultProps from './_defaultProps';
 import DesignLeftContent from "@/components/LeftContent/DesignLeftContent";
 import {Link, useModel} from "@umijs/max";
 import shallow from "zustand/shallow";
-import _ from 'lodash';
 import {PageContainer, ProCard, ProLayout, ProSettings, WaterMark} from "@ant-design/pro-components";
-import {history, Outlet, useSearchParams} from "@@/exports";
-import {Me, RedEnvelope, TwoDimensionalCodeOne, TwoDimensionalCodeTwo, WeixinMiniApp} from "@icon-park/react";
-import {Button, Dropdown, Image, message, Popover} from "antd";
-import {logout} from "@/utils/request";
+import {history, useSearchParams} from "@@/exports";
+import {Me} from "@icon-park/react";
+import {Dropdown} from "antd";
 import * as cache from "@/utils/cache";
 import {useAccess} from "@@/plugin-access";
 import {GET} from "@/services/crud";
 import {CONSTANT} from "@/utils/constant";
 import QueryLeftContent from "@/components/LeftContent/QueryLeftContent";
-import {io} from "socket.io-client";
 import {
-  useMount,
   useUnmount,
 } from '@umijs/hooks';
-import Theme from "@/components/Theme";
+import Theme, { ThemeProvider } from "@/components/Theme";
 import {menuHeaderDropdown} from "@/layouts/HomeLayout";
-import Upgrade from "@/components/dialog/upgrade";
+import {HitoData} from "@/components/HitoData";
 
 export const siderWidth = 333;
-const licence = cache.getItem2object('licence');
 
-export const headRightContent = [
-  licence?.licensedStartTime ? '' : <Upgrade/>,
-  <Popover placement="bottom" title="赞助" content={<Image src="/zanshang.jpg"/>} trigger="hover">
-    <RedEnvelope theme="filled" size="18" fill="#DE2910" strokeWidth={2}/>
-  </Popover>,
-  <Popover placement="bottom" title="公众号" content={<Image src="/mp.jpg"/>} trigger="hover">
-    <TwoDimensionalCodeOne theme="filled" size="18" fill="#DE2910" strokeWidth={2}/>
-  </Popover>,
-  <a style={{marginTop: '-10px'}} target={"_blank"} href='https://gitee.com/MARTIN-88/erd-online'><img
-    src='https://gitee.com/MARTIN-88/erd-online/badge/star.svg?theme=white' alt='star'></img></a>,
-
-];
+export const headRightContent = [];
 
 export interface DesignLayoutLayoutProps {
   children: any;
@@ -158,7 +142,9 @@ const DesignLayout: React.FC<DesignLayoutLayoutProps> = props => {
 
 
   return (
-    <WaterMark content={[licence?.licensedTo ? licence?.licensedTo : 'ERD Online', 'V5.0.0']}>
+    <WaterMark content={[licence?.licensedTo ? licence?.licensedTo : 'HitoData', 'V0.5.0']}>
+      <ThemeProvider>
+
       <ProLayout
         logo={"/logo.svg"}
         title={'ERD Online'}
@@ -205,18 +191,14 @@ const DesignLayout: React.FC<DesignLayoutLayoutProps> = props => {
           console.log(118, props)
           return (
             pathname === '/design/table/model' || pathname === '/design/table/chatsql'
-              ? <DesignLeftContent collapsed={props.collapsed}/>
+              ? <DesignLeftContent />
               : pathname === '/design/table/query'
-              ? <QueryLeftContent collapsed={props.collapsed}/> : null
+              ? <QueryLeftContent /> : null
 
           )
         }}
         siderWidth={siderWidth}
-        actionsRender={(props) => {
-          if (props.isMobile) return [];
 
-          return headRightContent;
-        }}
         menuFooterRender={(props) => {
           if (props?.collapsed) return undefined;
           return (
@@ -227,8 +209,8 @@ const DesignLayout: React.FC<DesignLayoutLayoutProps> = props => {
               }}
             >
               <div>{project.projectName}</div>
-              <div>© 2023 Made with 零代科技</div>
-              <div>ERD Online</div>
+              <div>© 2023 made with HitoX</div>
+              <div>HitoData</div>
             </div>
           );
         }}
@@ -276,6 +258,7 @@ const DesignLayout: React.FC<DesignLayoutLayoutProps> = props => {
           </ProCard>
         </PageContainer>
       </ProLayout>
+      </ThemeProvider>
     </WaterMark>
   );
 }

@@ -41,7 +41,7 @@ const Identification: React.FC<IdentificationProps> = (props) => {
   let extra: any[] = [];
   if (!licence.licensedStartTime) {
     title = '未取得授权：';
-    subTitle = '未获取授权，您可以免费使用ERD Online全部功能，只能新建有限数量的模型';
+    subTitle = '未获取授权，您可以免费使用HitoData全部功能，只能新建有限数量的模型';
     extra.push(<Upgrade/>);
   } else {
     title = '已取得授权：';

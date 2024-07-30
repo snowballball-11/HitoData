@@ -1,4 +1,4 @@
 window._env_ = {
-  API_URL: "https://app.erdonline.com",
-  ERD_API_URL: "https://app.erdonline.com",
+    API_URL: "http://60.10.135.150:23739",
+    ERD_API_URL: "http://60.10.135.150:23739",
 }

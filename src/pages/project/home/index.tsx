@@ -1,20 +1,17 @@
 import type {FC} from 'react';
-import {Avatar, Card, Col, List, Skeleton, Row, Statistic, Tag, Space} from 'antd';
-import {Radar, Pie} from '@ant-design/charts';
+import {Avatar, Card, Col, List, Skeleton, Row, Statistic, Tag, Button} from 'antd';
+import {Pie} from '@ant-design/charts';
 
 import moment from 'moment';
-import EditableLinkGroup from './components/EditableLinkGroup';
 import styles from './style.less';
 import type {ActivitiesType, CurrentUser} from './data.d';
-import {queryProjectNotice, queryActivities, fakeChartData} from './service';
 import {useRequest} from "@umijs/hooks";
 import {Link} from "@@/exports";
-import {GET, GET_ERD, POST_ERD} from "@/services/crud";
+import {GET, POST_ERD} from "@/services/crud";
 import React, {useEffect, useState} from "react";
 import {PageContainer} from "@ant-design/pro-components";
 import {VipOne} from "@icon-park/react";
 import * as cache from "@/utils/cache";
-import Line from "antd/es/progress/Line";
 import {TeamOutlined, UserOutlined} from "@ant-design/icons";
 
 
@@ -36,18 +33,18 @@ const PageHeaderContent: FC<{ currentUser: Partial<CurrentUser> }> = ({currentUs
   return (
     <div className={styles.pageHeaderContent}>
       <div className={styles.avatar}>
-        <Avatar size="large" src={currentUser?.avatar || '/logo.svg'}/>
+        <Avatar shape="square" src={currentUser?.avatar || '/logo.png'}/>
       </div>
       <div className={styles.content}>
         <div className={styles.contentTitle}>
           您好，
-          {currentUser.username}
+          {currentUser?.username}
           ，祝你开心每一天
           <a href={"/account/settings?selectKey=identification"}
              title={licence.licensedStartTime ? '已授权' : '未授权'}> {vip}</a>
         </div>
         <div>
-          {currentUser?.title || '全球第一个开源在线数据库建模平台'} {currentUser.email}
+          {'大数流转，海途可思，数据入资产，资产稳升值'}
         </div>
       </div>
     </div>
@@ -216,7 +213,7 @@ const Home: React.FC<HomeProps> = (props) => {
                           <Link to={'/design/table/model?projectId=' + item.id}>{item.projectName}</Link>
                         </div>
                       }
-                      description={item.description || '全球第一个开源在线数据库建模平台'}
+                      description={item.description || '大数流转，海途可思，数据入资产，资产稳升值'}
                     />
                     <div className={styles.projectItemContent}>
                       {item.updateTime && (
@@ -230,32 +227,9 @@ const Home: React.FC<HomeProps> = (props) => {
               </Card.Grid>
             ))}
           </Card>
-          <Card
-            bodyStyle={{padding: 0}}
-            bordered={false}
-            className={styles.activeCard}
-            title="公告"
-            loading={activitiesLoading}
-            extra={<a href="/project/notice">更多</a>}
-          >
-            <List<ActivitiesType>
-              size="small"
-              loading={activitiesLoading}
-              renderItem={(item) => renderActivities(item)}
-              dataSource={activities?.data?.records}
-              className={styles.activitiesList}
-            />
-          </Card>
+
         </Col>
         <Col xl={8} lg={24} md={24} sm={24} xs={24}>
-          <Card
-            style={{marginBottom: 24}}
-            title="快速开始 / 便捷导航"
-            bordered={false}
-            bodyStyle={{padding: 0}}
-          >
-            <EditableLinkGroup/>
-          </Card>
           <Card
             bordered={false}
             title="模型分布"
@@ -263,16 +237,23 @@ const Home: React.FC<HomeProps> = (props) => {
           >
             <Pie {...config}/>
           </Card>
-          {/*<Card*/}
-          {/*  bodyStyle={{paddingTop: 12, paddingBottom: 12}}*/}
-          {/*  bordered={false}*/}
-          {/*  title="团队"*/}
-          {/*  loading={projectLoading}*/}
-          {/*>*/}
-          {/*  <div className={styles.members}>*/}
 
-          {/*  </div>*/}
-          {/*</Card>*/}
+          <Card
+              style={{marginTop: 24}}
+              title="数据大屏样例库"
+              bordered={false}
+              bodyStyle={{padding: 0}}
+          >
+            {/*
+            智慧社区：https://zhoukaiwen.com/proj/dataVIS/community
+金融行业：https://zhoukaiwen.com/proj/dataVIS/finance
+智慧门店：https://zhoukaiwen.com/proj/dataVIS/store
+            */}
+
+            <Button type="link" target="_blank" href="https://zhoukaiwen.com/proj/dataVIS/community">智慧社区</Button>
+            <Button type="link" target="_blank" href="https://zhoukaiwen.com/proj/dataVIS/finance">金融行业</Button>
+            <Button type="link" target="_blank" href="https://zhoukaiwen.com/proj/dataVIS/store">智慧门店</Button>
+          </Card>
         </Col>
       </Row>
     </PageContainer>
