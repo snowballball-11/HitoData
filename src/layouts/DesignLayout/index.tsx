@@ -147,7 +147,7 @@ const DesignLayout: React.FC<DesignLayoutLayoutProps> = props => {
 
       <ProLayout
         logo={"/logo.svg"}
-        title={'ERD Online'}
+        title={'itoData'}
         bgLayoutImgList={[
           {
             src: '/ant-1.png',
