@@ -1,0 +1,3 @@
+[submodule "martin-framework"]
+	path = martin-framework
+	url = git@github.com:www-zerocode-net-cn/martin-framework.git
