@@ -22,6 +22,7 @@ const CodeTab: React.FC<CodeTabProps> = (props) => {
     <>
       <Tabs
         id="codeNav"
+        destroyInactiveTabPane
       >
         {database?.map((db: any) => {
           return <TabPane key={db.code} id={db.code} tab={db.code}><DbTab dbCode={db.code}

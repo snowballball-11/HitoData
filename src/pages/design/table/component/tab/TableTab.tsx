@@ -18,6 +18,7 @@ const TableTab: React.FC<TableTabProps> = (props) => {
   return (
     <>
       <Tabs
+        destroyInactiveTabPane
         id="tableNav"
         defaultActiveKey="field"
         size={'small'}

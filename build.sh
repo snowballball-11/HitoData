@@ -1,5 +1,5 @@
 rm -rf dist
-cnpm run build:prod
+yarn run build:prod
 rm -rf erd.tar.gz
 rm -rf ci/erd.tar.gz
 cd dist
