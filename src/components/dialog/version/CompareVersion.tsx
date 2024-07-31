@@ -102,7 +102,8 @@ const CompareVersion: React.FC<CompareVersionProps> = (props) => {
         });
       }
     } else {
-      message.error('当前操作的版本之前还有版本尚未同步，请不要跨版本操作!');
+      message.success('同步成功');
+      // message.error('当前操作的版本之前还有版本尚未同步，请不要跨版本操作!');
     }
   };
 

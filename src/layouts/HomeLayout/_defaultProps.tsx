@@ -27,7 +27,7 @@ export default {
       },
       {
         path: '/datav',
-        name: 'Data Visualization',
+        name: '项目数据看板',
         icon: <DataFile theme="filled" size="18" fill={colorPrimary} strokeWidth={2}/>,
       },
     ],

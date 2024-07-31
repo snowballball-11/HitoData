@@ -188,7 +188,7 @@ const DatabaseSetUp: React.FC<DatabaseSetUpProps> = (props) => {
                               console.log(166, value, option);
                               projectDispatch.updateDbs('select', value);
                               projectDispatch.updateDbs('properties', {
-                                driver_class_name: url[value?.toLowerCase()].driver_class_name,
+                                driver_class_name: url[value?.toLowerCase()]?.driver_class_name,
                                 url: url[value?.toLowerCase()].url,
                                 username: '',
                                 password: ''

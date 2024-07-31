@@ -146,7 +146,7 @@ const Version: React.FC<VersionProps> = (props) => {
               >
                 <RemoveVersion/>
               </Access>,
-              <CopyProject projectJSON={row.projectJSON}/>,
+              // <CopyProject projectJSON={row.projectJSON}/>,
               <RevertVersion synced={compareStringVersion(row.version, dbVersion) > 0}/>,
               <Access
                 accessible={access.canErdConnectorDbsync}

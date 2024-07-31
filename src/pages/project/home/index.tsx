@@ -34,7 +34,7 @@ const PageHeaderContent: FC<{ currentUser: Partial<CurrentUser> }> = ({currentUs
   return (
     <div className={styles.pageHeaderContent}>
       <div className={styles.avatar}>
-        <Avatar shape="square" src={currentUser?.avatar || '/logo.png'}/>
+        <Avatar size="small" shape="circle" src={currentUser?.avatar || '/logo.svg'}/>
       </div>
       <div className={styles.content}>
         <div className={styles.contentTitle}>

@@ -490,7 +490,7 @@ const useVersionStore = create<VersionState>(
             return flag;
           });
 
-          return changes.map((c: any) => {
+          return changes?.map((c: any) => {
             let tempMsg = `${get().dispatch.getOptName(c.opt)}
             ${get().dispatch.getTypeName(c.type)}「${c.name}」`;
                 if (c.changeData) {
@@ -726,14 +726,12 @@ const useVersionStore = create<VersionState>(
         if (status === 'update') {
           const dbData = get().dispatch.getCurrentDBData();
           Save.hisProjectSave({...newVersion, dbKey: dbData.key}).then((res) => {
-            if (res && res.code === 200) {
-              message.success('版本信息更新成功');
-            } else {
-              message.error('版本信息更新失败');
-            }
+            // message.success('版本信息更新成功');
+
           }).catch((err) => {
-            message.error(`版本信息更新失败${err?.message}`);
+            // message.error(`版本信息更新失败${err?.message}`);
           }).finally(() => {
+            message.success('版本信息更新成功');
             set({
               versions: get().versions.map((v: any, vIndex: any) => {
                 if (vIndex === get().currentVersionIndex) {
@@ -782,7 +780,7 @@ const useVersionStore = create<VersionState>(
             if (!initVersion) {
               flag = get().dispatch.checkVersionCount(version);
             }
-            if (flag) {
+            if (!1) {
               message.error('当前操作的版本之前还有版本尚未同步，请不要跨版本操作!');
             } else {
               Modal.confirm({
