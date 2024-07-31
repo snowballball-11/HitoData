@@ -489,18 +489,19 @@ const useVersionStore = create<VersionState>(
             console.log(496, flag, n);
             return flag;
           });
-        }
-        return changes.map((c: any) => {
-          let tempMsg = `${get().dispatch.getOptName(c.opt)}
-      ${get().dispatch.getTypeName(c.type)}「${c.name}」`;
-          if (c.changeData) {
-            tempMsg = `${tempMsg}「${c.changeData}」`;
-          }
-          return {
-            ...c,
-            message: tempMsg,
-          };
-        });
+
+          return changes.map((c: any) => {
+            let tempMsg = `${get().dispatch.getOptName(c.opt)}
+            ${get().dispatch.getTypeName(c.type)}「${c.name}」`;
+                if (c.changeData) {
+                  tempMsg = `${tempMsg}「${c.changeData}」`;
+                }
+                return {
+                  ...c,
+                  message: tempMsg,
+                };
+              });
+            }
       },
       showChanges: (type: string, change: any, currentVersion: any, lastVersion: any) => {
         const dataSource = _.get(projectState.project, "projectJSON");

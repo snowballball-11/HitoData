@@ -1,8 +1,8 @@
 [
 	{
 		"month": "1月",
-		"sh_market_capitalization": 31041.76,
-		"sh_transaction_amount": 5096.59,
+		"sh_market_capitalization": 1041.76,
+		"sh_transaction_amount": 3096.59,
 		"sh_pe_ratio": 19.25
 	},
 	{
@@ -14,61 +14,61 @@
 	{
 		"month": "3月",
 		"sh_market_capitalization": 41041.76,
-		"sh_transaction_amount": 44281.8,
+		"sh_transaction_amount": 9281.8,
 		"sh_pe_ratio": 17.77
 	},
 	{
 		"month": "4月",
-		"sh_market_capitalization": 19966.5,
-		"sh_transaction_amount": 9107.67,
+		"sh_market_capitalization": 49966.5,
+		"sh_transaction_amount": 19107.67,
 		"sh_pe_ratio": 17.31
 	},
 	{
 		"month": "5月",
-		"sh_market_capitalization": 21700.9,
-		"sh_transaction_amount": 8396.92,
+		"sh_market_capitalization": 61700.9,
+		"sh_transaction_amount": 28396.92,
 		"sh_pe_ratio": 15.16
 	},
 	{
 		"month": "6月",
-		"sh_market_capitalization": 22581.98,
-		"sh_transaction_amount": 11271.66,
+		"sh_market_capitalization": 72581.98,
+		"sh_transaction_amount": 31271.66,
 		"sh_pe_ratio": 14.06
 	},
 	{
 		"month": "7月",
-		"sh_market_capitalization": 25437.19,
-		"sh_transaction_amount": 22764.68,
+		"sh_market_capitalization": 85437.19,
+		"sh_transaction_amount": 42764.68,
 		"sh_pe_ratio": 14.29
 	},
 	{
 		"month": "8月",
-		"sh_market_capitalization": 30651.27,
-		"sh_transaction_amount": 28885.38,
+		"sh_market_capitalization": 90651.27,
+		"sh_transaction_amount": 58885.38,
 		"sh_pe_ratio": 13.58
 	},
 	{
 		"month": "9月",
-		"sh_market_capitalization": 41557.15,
-		"sh_transaction_amount": 21689.22,
+		"sh_market_capitalization": 101557.15,
+		"sh_transaction_amount": 61689.22,
 		"sh_pe_ratio": 14.07
 	},
 	{
 		"month": "10月",
-		"sh_market_capitalization": 58622.02,
-		"sh_transaction_amount": 24566.14,
+		"sh_market_capitalization": 118622.02,
+		"sh_transaction_amount": 74566.14,
 		"sh_pe_ratio": 13
 	},
 	{
 		"month": "11月",
-		"sh_market_capitalization": 60285.49,
-		"sh_transaction_amount": 29652.15,
+		"sh_market_capitalization": 133185.49,
+		"sh_transaction_amount": 80652.15,
 		"sh_pe_ratio": 13.88
 	},
 	{
 		"month": "12月",
-		"sh_market_capitalization": 90765.48,
-		"sh_transaction_amount": 30985.4,
+		"sh_market_capitalization": 152765.48,
+		"sh_transaction_amount": 90985.4,
 		"sh_pe_ratio": 14.65
 	}
 ]

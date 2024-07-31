@@ -255,7 +255,7 @@ const DatabaseSetUp: React.FC<DatabaseSetUpProps> = (props) => {
                 onBlur: (e) => {
                   console.log(225, e.target.value);
                   projectDispatch.updateDbs('properties', {
-                    ...defaultDbs.properties,
+                    ...defaultDbs.properties || {},
                     driver_class_name: e.target.value
                   });
                 }

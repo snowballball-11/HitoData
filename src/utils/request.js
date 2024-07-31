@@ -142,7 +142,16 @@ request.interceptors.response.use(async (response, options) => {
     const {code, msg} = data;
     if (code && code !== 200) {
       const errorText = msg || codeMessage[code];
-      // message.error(errorText);
+      const { url } = options;
+      /**
+       * match the error code to silent the error message
+       * /ncnb/connector/dbversion
+       * /ncnb/connector/dbsync
+       * /ncnb/hisProject/save
+       */
+        if (!['/ncnb/connector/dbversion', '/ncnb/hisProject/save', '/ncnb/connector/dbsync'].includes(url)) {
+            message.error(errorText);
+        }
     }
   }
   return response;
