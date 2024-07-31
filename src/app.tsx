@@ -14,7 +14,7 @@ export const layout: RunTimeLayoutConfig = (initialState: any) => {
   return {
     // 常用属性
     title: 'HitoData',
-    logo: '/logo.png',
+    logo: '/logo.svg',
     pure: true,
     // 自定义 403 页面
     noAccessible: <NoAccessPage/>,

@@ -5,5 +5,5 @@ docker build  -t erdonline/erd-ui:latest .
 ```
 - 进入martin根目录，执行下面命令启动erd-ui
 ```
-docker-compose up erd-ui
+docker-compose up erdonline/erd-ui
 ```

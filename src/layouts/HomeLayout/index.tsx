@@ -71,7 +71,7 @@ const HomeLayout: React.FC<HomeLayoutLayoutProps> = props => {
     <WaterMark content={[licence?.licensedTo?licence?.licensedTo:'HitoData', 'V0.5.0']}>
       <ThemeProvider>
       <ProLayout
-        logo={"/logo.png"}
+        logo={"/logo.svg"}
         title={"HitoData"}
         {...defaultProps}
         location={{
