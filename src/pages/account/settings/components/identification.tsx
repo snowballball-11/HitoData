@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import {Button, Result, Spin} from "antd";
 import {useRequest} from "@umijs/hooks";
 import {GET} from "@/services/crud";
+import { colorPrimary } from "@/components/Theme";
 
 import {LightMember, PeopleTopCard, VipOne} from "@icon-park/react";
 import * as cache from "@/utils/cache";
@@ -10,9 +11,9 @@ import Upgrade from "@/components/dialog/upgrade";
 
 export type IdentificationProps = {};
 const IdentificationType = {
-  free: <PeopleTopCard theme="filled" size="66" fill="#DE2910" strokeWidth={2} strokeLinejoin="miter"/>,
-  pro: <LightMember theme="filled" size="66" fill="#DE2910" strokeWidth={2} strokeLinejoin="miter"/>,
-  enterprise: <VipOne theme="filled" size="66" fill="#DE2910" strokeWidth={2} strokeLinejoin="miter"/>,
+  free: <PeopleTopCard theme="filled" size="66" fill={colorPrimary} strokeWidth={2} strokeLinejoin="miter"/>,
+  pro: <LightMember theme="filled" size="66" fill={colorPrimary} strokeWidth={2} strokeLinejoin="miter"/>,
+  enterprise: <VipOne theme="filled" size="66" fill={colorPrimary} strokeWidth={2} strokeLinejoin="miter"/>,
 };
 const Identification: React.FC<IdentificationProps> = (props) => {
   const {data: r, loading} = useRequest(() => {

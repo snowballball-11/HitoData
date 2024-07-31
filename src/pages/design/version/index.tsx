@@ -112,7 +112,7 @@ const Version: React.FC<VersionProps> = (props) => {
           },
           subTitle: {
             dataIndex: 'labels',
-            render: (_, row) => {
+            /*render: (_, row) => {
               return (
                 <Space>
                   {
@@ -127,7 +127,7 @@ const Version: React.FC<VersionProps> = (props) => {
                   }
                 </Space>
               );
-            },
+            },*/
             search: false,
           },
           actions: {

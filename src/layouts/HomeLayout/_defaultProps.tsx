@@ -1,4 +1,4 @@
-import {EveryUser, HomeTwo, Timeline, User} from "@icon-park/react";
+import {EveryUser, HomeTwo, Timeline, DataFile, User} from "@icon-park/react";
 import { colorPrimary } from "@/components/Theme";
 
 export default {
@@ -24,6 +24,11 @@ export default {
         path: '/project/group',
         name: '团队',
         icon: <EveryUser theme="filled" size="18" fill={colorPrimary} strokeWidth={2}/>,
+      },
+      {
+        path: '/datav',
+        name: 'Data Visualization',
+        icon: <DataFile theme="filled" size="18" fill={colorPrimary} strokeWidth={2}/>,
       },
     ],
   },

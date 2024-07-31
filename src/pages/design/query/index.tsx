@@ -20,6 +20,7 @@ import {POST} from "@/services/crud";
 import {uuid} from "@/utils/uuid";
 import {Modal, toast} from "@chatui/core";
 import moment from "moment";
+import { colorPrimary } from "@/components/Theme";
 
 const {Text} = Typography;
 const {Search} = Input;
@@ -379,17 +380,17 @@ const Query: React.FC<QueryProps> = (props) => {
                  activeKey: tab,
                  items: [
                    {
-                     label: <span><Data theme="filled" size="13" fill="#DE2910" strokeWidth={2}/> 执行结果</span>,
+                     label: <span><Data theme="filled" size="13" fill={colorPrimary} strokeWidth={2}/> 执行结果</span>,
                      key: 'result',
                      children: <QueryResult tableResult={tableResult}/>,
                    },
                    {
-                     label: <span><Plan theme="filled" size="13" fill="#DE2910" strokeWidth={2} strokeLinejoin="miter"/> 执行计划</span>,
+                     label: <span><Plan theme="filled" size="13" fill={colorPrimary} strokeWidth={2} strokeLinejoin="miter"/> 执行计划</span>,
                      key: 'plan',
                      children: <ExplainResult tableResult={explainTable}/>,
                    },
                    {
-                     label: <span><HistoryQuery theme="filled" size="13" fill="#DE2910" strokeWidth={2}/> 历史记录</span>,
+                     label: <span><HistoryQuery theme="filled" size="13" fill={colorPrimary} strokeWidth={2}/> 历史记录</span>,
                      key: 'history',
                      children: <QueryHistory queryId={props.id} key={tab}/>,
                    },

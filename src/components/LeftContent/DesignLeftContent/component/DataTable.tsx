@@ -21,6 +21,7 @@ import CopyEntity from "@/components/dialog/entity/CopyEntity";
 import CutEntity from "@/components/dialog/entity/CutEntity";
 import PastEntity from "@/components/dialog/entity/PastEntity";
 
+import { colorPrimary } from "@/components/Theme";
 
 export const useTreeItemStyles = makeStyles((theme: any) => ({
   root: {
@@ -237,10 +238,10 @@ const DataTable: React.FC<DataTableProps> = (props) => {
               e.dataTransfer.setData("Text", value);
             }} draggable="true">
               <div style={{marginRight: "6px"}}>
-                {node.type === "module" ? <Data theme="filled" size="12" fill="#DE2910" strokeWidth={2}/>
+                {node.type === "module" ? <Data theme="filled" size="12" fill={colorPrimary} strokeWidth={2}/>
                   : node.type === "relation" ?
-                    <ChartGraph theme="filled" size="12" fill="#DE2910" strokeWidth={2} strokeLinejoin="miter"/>
-                    : <TableFile theme="filled" size="12" fill="#DE2910" strokeWidth={2}/>
+                    <ChartGraph theme="filled" size="12" fill={colorPrimary} strokeWidth={2} strokeLinejoin="miter"/>
+                    : <TableFile theme="filled" size="12" fill={colorPrimary} strokeWidth={2}/>
                 }
               </div>
               <Typography variant="body2" className={classes.labelText}>

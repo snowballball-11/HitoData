@@ -1,6 +1,7 @@
 import type {FC} from 'react';
 import {Avatar, Card, Col, List, Skeleton, Row, Statistic, Tag, Button} from 'antd';
 import {Pie} from '@ant-design/charts';
+import { colorPrimary } from "@/components/Theme";
 
 import moment from 'moment';
 import styles from './style.less';
@@ -26,7 +27,7 @@ const PageHeaderContent: FC<{ currentUser: Partial<CurrentUser> }> = ({currentUs
   if (!licence.licensedStartTime) {
     vip = <VipOne theme="outline" size="20" fill="#333" strokeWidth={2} strokeLinejoin="miter" strokeLinecap="butt"/>
   } else {
-    vip = <VipOne theme="filled" size="18" fill="#DE2910" strokeWidth={2} strokeLinejoin="miter"/>
+    vip = <VipOne theme="filled" size="18" fill={colorPrimary} strokeWidth={2} strokeLinejoin="miter"/>
   }
 
 

@@ -32,6 +32,11 @@
     ],
   },
   {
+    path: '/datav',
+    name: 'Data Visualization',
+    component: './datav',
+  },
+  {
     path: '/project',
     component: '../layouts/HomeLayout',
     routes: [

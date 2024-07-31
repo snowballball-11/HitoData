@@ -12,6 +12,7 @@ import {Me} from "@icon-park/react";
 import * as cache from "@/utils/cache";
 import {menuHeaderDropdown} from "@/layouts/HomeLayout";
 import {useSearchParams} from "@@/exports";
+import { colorPrimary } from "@/components/Theme";
 
 const {Item} = Menu;
 
@@ -127,7 +128,7 @@ const Settings: React.FC = () => {
           pathname,
         }}
         avatarProps={{
-          src: <Me theme="filled" size="28" fill="#DE2910" strokeWidth={2}/>,
+          src: <Me theme="filled" size="28" fill={colorPrimary} strokeWidth={2}/>,
           title: <Dropdown
             placement="bottom"
             arrow={{pointAtCenter: true}}

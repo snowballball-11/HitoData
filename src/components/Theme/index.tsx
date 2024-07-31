@@ -1,17 +1,21 @@
 import React from "react";
-import {ConfigProvider } from "antd";
+import {ConfigProvider} from "antd";
 import {Outlet} from "@@/exports";
 
 export type indexProps = {};
 export const colorPrimary = '#818cf8';
 
+const token = {
+  colorPrimary,
+  colorInfo: colorPrimary,
+  colorLink: colorPrimary,
+};
+
 const Theme: React.FC<indexProps> = (props) => {
   return (<>
     <ConfigProvider
       theme={{
-        token: {
-          colorPrimary,
-        },
+        token,
       }}
     >
       <Outlet/>
@@ -26,9 +30,7 @@ export const ThemeProvider: React.FC = (props) => {
   return (
     <ConfigProvider
       theme={{
-        token: {
-          colorPrimary,
-        },
+        token,
       }}
     >
       {props.children}

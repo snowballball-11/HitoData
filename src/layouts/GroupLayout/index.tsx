@@ -10,7 +10,7 @@ import {history, Link, Outlet, useModel, useSearchParams} from "@umijs/max";
 import {GET} from "@/services/crud";
 import {useAccess} from "@@/plugin-access";
 import {CONSTANT} from "@/utils/constant";
-import Theme, { ThemeProvider } from "@/components/Theme";
+import Theme, { ThemeProvider, colorPrimary } from "@/components/Theme";
 import {menuHeaderDropdown} from "@/layouts/HomeLayout";
 
 
@@ -75,7 +75,7 @@ const GroupLayout: React.FC<GroupLayoutProps> = (props) => {
           pathname,
         }}
         avatarProps={{
-          src: <Me theme="filled" size="28" fill="#DE2910" strokeWidth={2}/>,
+          src: <Me theme="filled" size="28" fill={colorPrimary} strokeWidth={2}/>,
           size: 'small',
           title: <Dropdown
             placement="bottom"

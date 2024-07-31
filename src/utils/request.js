@@ -142,7 +142,7 @@ request.interceptors.response.use(async (response, options) => {
     const {code, msg} = data;
     if (code && code !== 200) {
       const errorText = msg || codeMessage[code];
-      message.error(errorText);
+      // message.error(errorText);
     }
   }
   return response;

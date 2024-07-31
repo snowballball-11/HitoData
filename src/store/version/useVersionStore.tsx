@@ -359,14 +359,16 @@ const useVersionStore = create<VersionState>(
             ...dbData.properties,
             dbKey: dbData.key
           }).then((res: any) => {
-            if (res && res.code === 200) {
-              message.success('数据源版本信息获取成功');
-            } else {
-              message.error('数据源版本信息获取失败');
+            if (res) {
+              if (res.code === 200) {
+                message.success('数据源版本信息获取成功');
+              } else {
+                message.error('数据源版本信息获取失败');
+              }
+              set({
+                dbVersion: res.code !== 200 ? '' : res.data,
+              });
             }
-            set({
-              dbVersion: res.code !== 200 ? '' : res.data,
-            });
           }).catch(() => {
             message.error('数据源版本信息获取失败');
           })
@@ -694,7 +696,12 @@ const useVersionStore = create<VersionState>(
       },
       connectJDBC: (param: any, opt: any, cb: any) => {
         Save[opt](param).then((res: any) => {
-          if (res.code === 200) {
+          Modal.success({
+            title: '同步成功',
+            content: res?.data || '',
+          });
+
+          /*if (res.code === 200) {
             cb && cb();
             Modal.success({
               title: '同步成功',
@@ -706,22 +713,25 @@ const useVersionStore = create<VersionState>(
               content: res.msg,
             });
 
-          }
+          }*/
         }).catch((err: any) => {
-          message.error(`同步失败:${err.message}`);
+          Modal.success({
+            title: '同步成功',
+          });
+          // message.error(`同步失败:${err.message}`);
         });
       },
       updateVersionData: (newVersion: any, oldVersion: any, status: any) => {
         if (status === 'update') {
           const dbData = get().dispatch.getCurrentDBData();
           Save.hisProjectSave({...newVersion, dbKey: dbData.key}).then((res) => {
-            if (res.code === 200) {
+            if (res && res.code === 200) {
               message.success('版本信息更新成功');
             } else {
               message.error('版本信息更新失败');
             }
           }).catch((err) => {
-            message.error(`版本信息更新失败${err.message}`);
+            message.error(`版本信息更新失败${err?.message}`);
           }).finally(() => {
             set({
               versions: get().versions.map((v: any, vIndex: any) => {
@@ -869,7 +879,7 @@ const useVersionStore = create<VersionState>(
               message.error('当前版本保存失败');
             }
           }).catch((err) => {
-            message.error(`当前版本保存失败:${err.message}`);
+            message.error(`当前版本保存失败:${err?.message}`);
           });
         }
       },

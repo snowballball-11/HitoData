@@ -16,9 +16,8 @@ import QueryLeftContent from "@/components/LeftContent/QueryLeftContent";
 import {
   useUnmount,
 } from '@umijs/hooks';
-import Theme, { ThemeProvider } from "@/components/Theme";
+import Theme, { ThemeProvider, colorPrimary } from "@/components/Theme";
 import {menuHeaderDropdown} from "@/layouts/HomeLayout";
-import {HitoData} from "@/components/HitoData";
 
 export const siderWidth = 333;
 
@@ -177,7 +176,7 @@ const DesignLayout: React.FC<DesignLayoutLayoutProps> = props => {
           type: 'group',
         }}
         avatarProps={{
-          src: <Me theme="filled" size="28" fill="#DE2910" strokeWidth={2}/>,
+          src: <Me theme="filled" size="28" fill={colorPrimary} strokeWidth={2}/>,
           size: 'small',
           title: <Dropdown
             placement="bottom"
