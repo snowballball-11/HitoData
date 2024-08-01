@@ -40,9 +40,6 @@ const PageHeaderContent: FC<{ currentUser: Partial<CurrentUser> }> = ({currentUs
         <div className={styles.contentTitle}>
           您好，
           {currentUser?.username}
-          ，祝你开心每一天
-          <a href={"/account/settings?selectKey=identification"}
-             title={licence.licensedStartTime ? '已授权' : '未授权'}> {vip}</a>
         </div>
         <div>
           {'大数流转，海途可思，数据入资产，资产稳升值'}

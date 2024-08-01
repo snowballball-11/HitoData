@@ -140,68 +140,7 @@ const Upgrade: React.FC<UpgradeProps> = (props) => {
             />
 
           </StepsForm.StepForm>
-          <StepsForm.StepForm<{
-            checkbox: string;
-          }>
-            name="type"
-            title="授权类型"
-            stepProps={{
-              description: '不管选多少时长，都可以免费跟着官方版本升级，我们承诺不针对版本授权',
-            }}
-            onFinish={async () => {
-              return true;
-            }}
-          >
-            <ProFormRadio.Group
-              name="licenceDuration"
-              label="授权时长"
-              tooltip="根据需要选择合适的时长"
-              fieldProps={{
-                onChange: (e: RadioChangeEvent) => {
-                  console.log(75, e.target.value, transInfo)
-                  const newTransInfo = {
-                    ...transInfo,
-                    productId: e.target.value
-                  };
-                  transInfo = newTransInfo;
-                  POST_ERD("/trans/transaction", newTransInfo).then(r => {
-                    console.log(110, r);
-                    if (r?.code === 200) {
-                      setQRUrl(r?.data?.WX?.code_url || "");
-                      transInfo = {
-                        ...transInfo,
-                        tradeNo: r?.data?.WX?.tradeNo
-                      }
-                    }
-                  });
-                }
-              }}
-              options={[
-                {
-                  label: '1年：999￥',
-                  value: '1660258532617940993',
-                },
-                {
-                  label: '3年：1999￥',
-                  value: '1677652098344325122',
-                },
-                {
-                  label: '终生：9999￥',
-                  value: '1677652184554049537',
-                },
-              ]}
-            />
-            <QRCode
-              errorLevel="H"
-              value={QRUrl}
-              icon="/logo.svg"
-            />
-            <br/>
-            <Typography.Title level={5} style={{margin: 0}}>
-              先选择授权时长，再扫面的弹出微信二维码，付款成功后，邮箱会收到licence，之后进入下一步，上传licence，即可完成授权
-            </Typography.Title>
-            <br/>
-          </StepsForm.StepForm>
+
           <StepsForm.StepForm<{
             checkbox: string;
           }>

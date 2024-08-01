@@ -27,7 +27,6 @@ const Settings: React.FC = () => {
     base: '基本设置',
     security: '安全设置',
     // binding: '账号绑定',
-    identification: '授权类型',
   };
 
   const [searchParams] = useSearchParams();
@@ -81,8 +80,6 @@ const Settings: React.FC = () => {
         return <SecurityView/>;
       case 'binding':
         return <BindingView/>;
-      case 'identification':
-        return <Identification/>;
       default:
         return null;
     }

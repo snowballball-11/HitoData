@@ -73,7 +73,7 @@ const ChatSQL: React.FC<ChatSQLProps> = (props) => {
     },
   ];
 
-  const quickReplies = mode === 0 ? _.concat(aiQuickReplies, defaultQuickReplies) : _.concat(askQuickReplies, defaultQuickReplies);
+  const quickReplies = mode === 0 ? _.concat(aiQuickReplies) : _.concat(askQuickReplies);
 
   const fetchAiAnswer = (command: string) => {
     if (mode === 0) {
@@ -86,11 +86,32 @@ const ChatSQL: React.FC<ChatSQLProps> = (props) => {
       }, 500);
     } else {
 
-      POST('/ncnb/ai/sqlTranslateOrRequest', {
+      /**
+       * {
+       *     "query": "你好",
+       *     "temperature": 0.8,
+       *     "top_p": 0.9,
+       *     "max_length": 512
+       * }
+       *
+       * {
+       *     "code": 200,
+       *     "success": true,
+       *     "message": "success",
+       *     "data": {
+       *         "response": "你好👋！很高兴见到你，欢迎问我任何问题。"
+       *     }
+       * }
+       */
+
+      // http://60.10.135.150:23523/chat
+      POST('/chat', {
           chatId,
-          command,
-          "tables": selectedTable,
-          "schema": "Mysql",
+          query: command,
+          "temperature": 0.8,
+          "top_p": 0.9,
+          "max_length": 512,
+          "image": "",
         }
       ).then((result) => {
         console.log(result)
@@ -98,14 +119,14 @@ const ChatSQL: React.FC<ChatSQLProps> = (props) => {
           appendMsg({
             type: 'sql',
             user: {avatar: '/logo.svg'},
-            content: {text: result.data},
+            content: {text: result.data?.response},
           });
         } else {
-          if (result && result?.msg) {
+          if (result?.message) {
             appendMsg({
               type: 'text',
               user: {avatar: '/logo.svg'},
-              content: {text: result?.msg},
+              content: {text: result?.message},
             });
           }
         }

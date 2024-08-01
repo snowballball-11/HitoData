@@ -490,7 +490,7 @@ const useVersionStore = create<VersionState>(
             return flag;
           });
 
-          return changes?.map((c: any) => {
+          return changes?.map?.((c: any) => {
             let tempMsg = `${get().dispatch.getOptName(c.opt)}
             ${get().dispatch.getTypeName(c.type)}「${c.name}」`;
                 if (c.changeData) {

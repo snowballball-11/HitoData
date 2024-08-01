@@ -26,13 +26,6 @@ export const menuHeaderDropdown = (
       个人中心
     </Menu.Item>
     <Menu.Divider/>
-    <Menu.Item key="vip" onClick={()=>{
-      history.push("/account/settings?selectKey=identification")
-    }}>
-      <UserOutlined/>
-      授权信息
-    </Menu.Item>
-    <Menu.Divider/>
 
     <Menu.Item key="logout" onClick={() => {
       logout();
