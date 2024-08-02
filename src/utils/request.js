@@ -67,9 +67,9 @@ const errorHandler = error => {
 
 };
 
-export const BASE_URL = window._env_.API_URL || API_URL;
-export const ERD_BASE_URL = window._env_.ERD_API_URL || API_URL;
-export const CHAT_BASE_URL = window._env_.CHAT_BASE_URL || API_URL;
+export const BASE_URL = window._env_.API_URL;
+export const ERD_BASE_URL = window._env_.ERD_API_URL || window._env_.API_URL;
+export const CHAT_BASE_URL = window._env_.CHAT_BASE_URL || window._env_.API_URL;
 
 /**
  * 配置request请求时的默认参数

@@ -88,25 +88,9 @@ const ChatSQL: React.FC<ChatSQLProps> = (props) => {
     } else {
 
       /**
-       * {
-       *     "query": "你好",
-       *     "temperature": 0.8,
-       *     "top_p": 0.9,
-       *     "max_length": 512
-       * }
-       *
-       * {
-       *     "code": 200,
-       *     "success": true,
-       *     "message": "success",
-       *     "data": {
-       *         "response": "你好👋！很高兴见到你，欢迎问我任何问题。"
-       *     }
-       * }
+       * /chat/ / can't be miss.
        */
-
-      // http://60.10.135.150:23523/chat
-      CHAT('/chat', {
+      CHAT('/chat/', {
           uuid: chatId,
           query: command,
           "temperature": 0.8,
