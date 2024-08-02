@@ -21,7 +21,7 @@ const codeMessage = {
   406: '请求的格式不可得。',
   410: '请求的资源被永久删除，且不会再得到的。',
   422: '当创建一个对象时，发生一个验证错误。',
-  500: '服务器发生错误，请联系管理员。',
+  500: '服务器发生错误，请稍后重试。',
   502: '网关错误。',
   503: '服务不可用，服务器暂时过载或维护。',
   504: '网关超时。',
@@ -69,6 +69,7 @@ const errorHandler = error => {
 
 export const BASE_URL = window._env_.API_URL || API_URL;
 export const ERD_BASE_URL = window._env_.ERD_API_URL || API_URL;
+export const CHAT_BASE_URL = window._env_.CHAT_BASE_URL || API_URL;
 
 /**
  * 配置request请求时的默认参数
@@ -85,8 +86,59 @@ const request_erd = extend({
   errorHandler, // 默认错误处理
 });
 
+const request_chat = extend({
+  prefix: CHAT_BASE_URL,
+  errorHandler, // 默认错误处理
+});
+
 
 request.interceptors.request.use((url, options) => {
+  // let params = (new URL(document.location)).searchParams;
+  // let projectId = params.get(CONSTANT.PROJECT_ID);
+  if (url.indexOf('/oauth/token') < 0) {
+    const authorization = cache.getItem('Authorization');
+    const projectId = cache.getItem(CONSTANT.PROJECT_ID);
+    if (authorization) {
+      options.headers = {
+        ...options.headers,
+        projectId: projectId,
+        'Authorization': `Bearer ${authorization}`
+      }
+      return (
+        {
+          options: {
+            ...options,
+            interceptors: true,
+          },
+        }
+      );
+    }
+  } else {
+    options.headers = {
+      ...options.headers,
+      'Authorization': 'Basic Y2xpZW50MjoxMjM0NTY='
+    }
+    return (
+      {
+        options: {
+          ...options,
+          interceptors: true,
+        },
+      }
+    );
+  }
+  return (
+    {
+      options: {
+        ...options,
+        interceptors: true,
+      },
+    }
+  );
+});
+
+
+request_chat.interceptors.request.use((url, options) => {
   // let params = (new URL(document.location)).searchParams;
   // let projectId = params.get(CONSTANT.PROJECT_ID);
   if (url.indexOf('/oauth/token') < 0) {
@@ -167,5 +219,5 @@ export const logout = () => {
   history.push("/login");
 }
 
-export {request_erd};
+export {request_erd, request_chat};
 export default request;

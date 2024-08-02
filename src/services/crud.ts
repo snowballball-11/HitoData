@@ -1,5 +1,5 @@
 import {SortOrder} from "antd/lib/table/interface";
-import request,{request_erd} from "@/utils/request";
+import request,{request_erd, request_chat} from "@/utils/request";
 
 export async function PAGE(url: string, params: any, sorter: Record<string, SortOrder>) {
   if (!sorter) {
@@ -106,6 +106,15 @@ export async function UPLOAD(url: string, params: any) {
   return request<COMMON.R>(url, {
     method: 'POST',
     body: params,
+  });
+}
+
+export async function CHAT(url: string, params: any) {
+  return request_chat<COMMON.R>(url, {
+    method: 'POST',
+    data: {
+      ...params,
+    },
   });
 }
 

@@ -1,15 +1,16 @@
 import React, {useEffect, useState} from "react";
-import Chat, {Bubble, Button, Card, CardActions, MessageProps, Modal, toast, useMessages} from '@chatui/core';
+import Chat, {Bubble, Card, CardActions, MessageProps, Modal, toast, useMessages} from '@chatui/core';
 import '@chatui/core/es/styles/index.less';
 import '@chatui/core/dist/index.css';
 import {ProCard} from "@ant-design/pro-components";
 import _ from "lodash";
-import {POST} from "@/services/crud";
+import {CHAT} from "@/services/crud";
 import copy from 'copy-to-clipboard';
 import {FloatButton, List, Typography} from "antd";
 import useProjectStore from "@/store/project/useProjectStore";
 import shallow from "zustand/shallow";
 import {uuid} from "@/utils/uuid";
+import { CopyOutlined } from '@ant-design/icons';
 
 const {Text} = Typography;
 
@@ -105,8 +106,8 @@ const ChatSQL: React.FC<ChatSQLProps> = (props) => {
        */
 
       // http://60.10.135.150:23523/chat
-      POST('/chat', {
-          chatId,
+      CHAT('/chat', {
+          uuid: chatId,
           query: command,
           "temperature": 0.8,
           "top_p": 0.9,
@@ -234,15 +235,14 @@ const ChatSQL: React.FC<ChatSQLProps> = (props) => {
         return (
           <>
             <Bubble content={content.text}/>
-            <Card size="xl">
-              <CardActions>
-                {/*<Button color="primary">执行SQL</Button>*/}
-                <Button onClick={() => {
-                  copy(content.text);
-                  toast.success('已复制');
-                }}>复制</Button>
-              </CardActions>
-            </Card>
+            <CopyOutlined
+              color="#fff"
+              size={16}
+              onClick={() => {
+                copy(content.text);
+                toast.success('已复制');
+              }}
+            />
           </>);
       default:
         return null;

@@ -139,7 +139,7 @@ export default {
           },
         ]
       },
-      /*{
+      {
         path: '/design/table/chatsql',
         name: 'Chat SQL',
         icon: <DatabaseSearch theme="filled" size="18" fill={colorPrimary} strokeWidth={2}/>,
@@ -149,7 +149,7 @@ export default {
             name: ' ',
           },
         ]
-      },*/
+      },
     ],
   },
   location: {
