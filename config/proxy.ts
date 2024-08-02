@@ -8,10 +8,10 @@
  */
 export default {
   dev: {
-    '/api/': {
-      target: 'https://preview.pro.ant.design',
+    '/chat': {
+      target: 'http://60.10.135.150:23741/',
       changeOrigin: true,
-      pathRewrite: { '^': '' },
+      pathRewrite: { '^/chat': '' },
     },
   },
   test: {
